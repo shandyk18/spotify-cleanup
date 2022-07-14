@@ -17,7 +17,7 @@ app.post('/login', (req, res) => {
   const credentials = {
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    redirectUri: "http://localhost:3000/viz",
+    redirectUri: "https://spotify-cleanup.herokuapp.com/viz",
     // accessToken: code
   };
 
@@ -55,5 +55,5 @@ app.get('/saved', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`)
+  // console.log(`Listening at http://localhost:${port}`)
 });
