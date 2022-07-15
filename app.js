@@ -5,12 +5,14 @@ const SpotifyWebApi = require('spotify-web-api-node');
 require('dotenv').config();
 
 const app = express();
+const path = require("path");
 const port = 8000;
 
 let spotifyApi;
 
 app.use(cors()); // To handle cross-origin requests
 app.use(express.json()); // To parse JSON bodies
+app.use(express.static(path.resolve(__dirname, "./spotify-react/build")));
 
 app.post('/login', (req, res) => {
   const code = req.body.code;
