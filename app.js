@@ -12,7 +12,11 @@ let spotifyApi;
 
 app.use(cors()); // To handle cross-origin requests
 app.use(express.json()); // To parse JSON bodies
-app.use(express.static(path.resolve(__dirname, "./spotify-react")));
+app.use(express.static(path.resolve(__dirname, "build")));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.post('/login', (req, res) => {
   const code = req.body.code;
