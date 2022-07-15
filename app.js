@@ -24,7 +24,7 @@ app.post('/login', (req, res) => {
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     redirectUri: "https://spotify-cleanup.herokuapp.com/viz",
-    // accessToken: code
+    accessToken: code
   };
 
   spotifyApi = new SpotifyWebApi(credentials);
