@@ -38,7 +38,7 @@ app.post('/login', (req, res) => {
     spotifyApi.setAccessToken(data.body["access_token"]);
   })
   .catch((err) => {
-    res.send(err);
+    res.send({err});
   })
 
 });
